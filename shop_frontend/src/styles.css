@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+#container-login{
+    height: 100vh;
+}
+#container-login > div {
+    width: 50vh;
+}
+#list-product-item{
+    overflow-y: scroll;
+    height: 70vh;
+    max-height: 70vh;
+}
+#list-products{
+    overflow-y: scroll;
+    height: 80vh;
+    max-height: 80vh;
+}

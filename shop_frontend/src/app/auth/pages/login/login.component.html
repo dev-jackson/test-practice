@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="d-flex justify-content-center align-items-center" id="container-login">
+    <div class="card p-2">
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <h2>Iniciar session</h2>
+            </div>
+            <form (ngSubmit)="signIn()">
+                
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Correo" #email>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" #password>
+                </div>
+                <div *ngIf="!isValid" class="alert alert-danger" role="alert">
+                    Usuario o contraseña no valido
+                  </div>
+                <div class="d-grid mb-2">
+                    <input class="btn btn-primary" type="submit" value="Ingresar">
+                </div>
+            </form> 
+            <div class="d-grid mb-2">
+                <a class="btn btn-warning" routerLink="/auth/register">Registro</a>
+            </div>
+            <div class="d-grid">
+                <a class="btn btn-light" routerLink="" >Regresar</a>
+            </div>
+            
+        </div>
+    </div>
+</div>

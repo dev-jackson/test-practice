@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div >
+    <div class="card">
+        <div class="card-header">
+            <h2>Productos</h2>
+        </div>
+        <div class="card-body " id="list-products">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th scope="col" class="text-center">Nombre</th>
+                        <th scope="col" class="text-center">Imagen</th>
+                        <th scope="col" class="text-center">Precio</th>
+                        <th scope="col" class="text-center">Stock</th>
+                        <th scope="col" class="text-center">Unidad</th>
+                        <th scope="col" class="text-center">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products; let i=index;">
+                        <td>{{i +1}}</td>
+                        <td>{{product.name}}</td>
+                        <td><img [src]="product.imageUrl" alt="" width="100px"></td>
+                        <td class="text-center">{{product.price}}</td>
+                        <td class="text-center">{{product.amount}}</td>
+                        <td><input class="form-control text-center" type="number" min="1" value="1" max="{{product.amount}}" #textAmount></td>
+                        <td class="text-center"><input class="btn btn-success btn-sm" type="button" value="Agregar" (click)="addProductInCar(product, textAmount.value)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
